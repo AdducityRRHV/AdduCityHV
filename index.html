@@ -4,76 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adducity Rapid Repid Response & High Visibility</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #1c1c1c;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.7);
+            width: 300px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ff8080;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ff0000;
+            background: #1c1c1c;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff4d4d;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .login-button:hover {
+            background-color: #b30000;
+            transform: scale(1.05);
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff8080;
+        }
+
+        .login-container p a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        .login-container p a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="hero-header">
-        <div class="wrapper">
-            <header>
-                <div class="logo">
-                    <i class="fa-solid fa"></i>
-                    <div class="logo-text">Rapid Response & High Visibility</div>
-                </div>
-                <nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ui class="navlinks">
-                        <div class="btn_Main">
-                        <li><a href="activegangs.html" class="btn active">Active Gangs</a></li>
-                        <li><a href="./Gangs/Usgandu/Index/Search.html" class="btn active">Interraction</a></li>
-                        <li><a href="#" class="btn active">Arrest</a></li>
-                        <li><a href="#" class="btn active">Operation</a></li>
-                        <li><a href="#" class="btn active">Events</a></li>
-                        <li><a href="#" class="btn active">Statistics</a></li>
-                    </ui>
-                </div>
-                </nav>
-            </header>
-            <div class="container">
-                <div class="hero-pic">
-                    <img src="Police.jpg" alt="" srcset="profile pic">
-                </div>
-                <div class="hero-text">
-                    <h5>Goals <span class="input"></span></h5>
-                    <h1>RR HV</h1>
-                    <p>
-                        police special team has intensified efforts to target criminal gangs operating within communities.
-     These specialized units are trained to tackle organized crime, focusing on dismantling gang networks, apprehending key leaders, and reducing violence associated with gang activities. 
-     By gathering intelligence and executing strategic operations, the team works to curb illegal activities like drug trafficking, extortion, and robbery, aiming to create safer neighborhoods and restore public trust in law enforcement.
-      Their proactive approach involves collaboration with local communities and other law enforcement agencies, ensuring a comprehensive crackdown on gang-related crimes.
-                    </p>
-                    <div class="btn-group">
-                        <a href="addumap.html" class="btn active">Addu City Map</a>
-                        <a href="#" class="btn active">HV Team</a>
-                    </div>
-
-                </div>
+    <div class="login-container">
+        <h2>Addu City RR HV</h2>
+        <form action="Home.html" method="POST" onsubmit="return validateLogin()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
-<script>
-  var togglebtn=document.querySelector(".togglebtn");
-  var nav=document.querySelector(".navlinks");
-  var links=document.querySelector(".navlinks li");
 
-  togglebtn.addEventListener("click", function(){
-    this.classList.toggle("click");
-    nav.classList.toggle("open");
-  })
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-
-  var typed=new Typed(".input",{
-    strings:["Target criminal gangs operating within communities"],
-    typedSpeed:70,
-    backSpeed:45,
-    loop:true
-  })
-</script>
-
+            if (username === 'RRHV' && password === '1234') {
+                return true;
+            } else {
+                alert('Invalid username or password!');
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
